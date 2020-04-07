@@ -4,7 +4,13 @@
   "description": "Serverless webpack example using Typescript",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sls": "serverless",
+    "clean": "npm cache clean --force",
+    "build": "npm run clean && npm install",
+    "start": "npm run build && npm run start:dev",
+    "start:dev": "sls offline start -s dev",
+    "deploy:dev": "npm run build && sls deploy -s dev -r us-east-1"
   },
   "dependencies": {
     "source-map-support": "^0.5.10"
