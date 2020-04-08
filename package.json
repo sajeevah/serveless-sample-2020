@@ -10,7 +10,7 @@
     "build": "npm run clean && npm install",
     "start": "npm run build && npm run start:dev",
     "start:dev": "sls offline start -s dev",
-    "deploy:dev": "npm run build && sls deploy -s dev -r us-east-1"
+    "deploy:dev": "npm run build && sls deploy --verbose -s dev -r us-east-1"
   },
   "dependencies": {
     "source-map-support": "^0.5.10"
